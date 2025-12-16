@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Classic Black Hoodie",
+    "price": 12000,
+    "image": "assets/images/hoodie.jpeg",
+    "description": "A premium black hoodie made with soft cotton fabric. Perfect for casual and streetwear styles."
+  },
+  {
+    "id": 2,
+    "name": "Urban Denim Jacket",
+    "price": 18000,
+    "image": "assets/images/jacket.jpeg",
+    "description": "Stylish denim jacket with a modern cut, suitable for all seasons."
+  },
+  {
+    "id": 3,
+    "name": "Minimal White T-Shirt",
+    "price": 8000,
+    "image": "assets/images/tshirt.jpeg",
+    "description": "Comfortable white t-shirt designed for everyday wear with breathable fabric."
+  }
+]

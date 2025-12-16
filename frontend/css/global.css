@@ -1,0 +1,78 @@
+/* ================= GLOBAL VARIABLES ================= */
+:root {
+  --black: #000000;
+  --cyan: #22D3EE;
+  --gray: #9CA3AF;
+  --white: #ffffff;
+}
+
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ================= BODY ================= */
+body {
+  background-color: #f9f9f9;
+  color: #111;
+}
+
+/* ================= HEADER ================= */
+.header {
+  background-color: var(--black);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.nav a {
+  color: var(--white);
+  margin-left: 20px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.nav a:hover {
+  color: var(--cyan);
+}
+
+.cart-link span {
+  background: var(--cyan);
+  color: var(--black);
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-size: 12px;
+}
+
+/* ================= FOOTER ================= */
+.footer {
+  background-color: var(--black);
+  color: var(--gray);
+  text-align: center;
+  padding: 20px;
+  margin-top: 60px;
+}
+
+/* ================= BUTTON ================= */
+.btn-primary {
+  display: inline-block;
+  background-color: var(--cyan);
+  color: var(--black);
+  padding: 12px 25px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.btn-primary:hover {
+  opacity: 0.85;
+}

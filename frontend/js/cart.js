@@ -1,84 +1,84 @@
-// ================= CART STORAGE =================
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
+const cartContent = document.getElementById("cartContent");
+const cartTotalEl = document.getElementById("cartTotal");
+const cartSummary = document.getElementById("cartSummary");
 
-// ================= ADD TO CART =================
-function addToCart(product) {
-  const existing = cart.find(item => item.id === product.id);
+function getCart() {
+  return JSON.parse(localStorage.getItem("cart")) || [];
+}
 
-  if (existing) {
-    existing.quantity += 1;
-  } else {
-    cart.push({ ...product, quantity: 1 });
+function saveCart(cart) {
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartCount();
+}
+
+function renderCart() {
+  const cart = getCart();
+  cartContent.innerHTML = "";
+
+  if (cart.length === 0) {
+    cartContent.innerHTML = `
+      <div class="empty-cart">
+        <h3>Your cart is empty</h3>
+        <p>Browse products and add items to your cart.</p>
+      </div>
+    `;
+    cartSummary.style.display = "none";
+    return;
   }
 
-  saveCart();
-  updateCartCount();
-  alert("Item added to cart");
-}
+  cartSummary.style.display = "flex";
 
-// ================= SAVE CART =================
-function saveCart() {
-  localStorage.setItem("cart", JSON.stringify(cart));
-}
-
-// ================= UPDATE COUNT =================
-function updateCartCount() {
-  const count = cart.reduce((sum, item) => sum + item.quantity, 0);
-  const el = document.getElementById("cart-count");
-  if (el) el.textContent = count;
-}
-
-// ================= RENDER CART PAGE =================
-function renderCart() {
-  const container = document.getElementById("cartContainer");
-  const totalEl = document.getElementById("cartTotal");
-
-  if (!container) return;
-
-  container.innerHTML = "";
   let total = 0;
 
   cart.forEach((item, index) => {
     total += item.price * item.quantity;
 
-    container.innerHTML += `
-      <div class="cart-item">
-        <img src="${item.image}" alt="${item.name}">
-        <div class="cart-info">
-          <h3>${item.name}</h3>
-          <p>₦${item.price.toLocaleString()}</p>
-        </div>
+    const div = document.createElement("div");
+    div.className = "cart-item";
 
-        <div class="cart-actions">
-          <input type="number" min="1" value="${item.quantity}"
-            onchange="updateQuantity(${index}, this.value)">
-          <button class="remove-btn" onclick="removeItem(${index})">
-            Remove
-          </button>
-        </div>
+    div.innerHTML = `
+      <img src="${item.image}" alt="${item.name}">
+      <div>
+        <h4>${item.name}</h4>
+        <div class="price">₦${item.price}</div>
       </div>
+
+      <div class="qty-control">
+        <button class="minus">−</button>
+        <span>${item.quantity}</span>
+        <button class="plus">+</button>
+      </div>
+
+      <div>₦${item.price * item.quantity}</div>
+
+      <button class="remove-btn">✕</button>
     `;
+
+    div.querySelector(".plus").onclick = () => {
+      item.quantity++;
+      saveCart(cart);
+      renderCart();
+    };
+
+    div.querySelector(".minus").onclick = () => {
+      if (item.quantity > 1) {
+        item.quantity--;
+      }
+      saveCart(cart);
+      renderCart();
+    };
+
+    div.querySelector(".remove-btn").onclick = () => {
+      cart.splice(index, 1);
+      saveCart(cart);
+      showToast("Item removed");
+      renderCart();
+    };
+
+    cartContent.appendChild(div);
   });
 
-  totalEl.textContent = total.toLocaleString();
+  cartTotalEl.textContent = total;
 }
 
-// ================= UPDATE QUANTITY =================
-function updateQuantity(index, qty) {
-  cart[index].quantity = parseInt(qty);
-  saveCart();
-  renderCart();
-  updateCartCount();
-}
-
-// ================= REMOVE ITEM =================
-function removeItem(index) {
-  cart.splice(index, 1);
-  saveCart();
-  renderCart();
-  updateCartCount();
-}
-
-// ================= INIT =================
-updateCartCount();
 renderCart();

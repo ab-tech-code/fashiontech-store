@@ -1,23 +1,23 @@
 [
   {
     "id": 1,
-    "name": "Classic Black Hoodie",
+    "name": "Classic Hoodie",
     "price": 12000,
     "image": "assets/images/hoodie.jpeg",
-    "description": "A premium black hoodie made with soft cotton fabric. Perfect for casual and streetwear styles."
+    "description": "REIOASUD Los Angeles Hoodie California Sweatshirt Aesthetic Clothes Girls Long Sleeve Pullover Oversized Hoodie for Women."
   },
   {
     "id": 2,
-    "name": "Urban Denim Jacket",
+    "name": "Unknown",
     "price": 18000,
     "image": "assets/images/jacket.jpeg",
     "description": "Stylish denim jacket with a modern cut, suitable for all seasons."
   },
   {
     "id": 3,
-    "name": "Minimal White T-Shirt",
+    "name": "LucMatton",
     "price": 8000,
-    "image": "assets/images/tshirt.jpeg",
-    "description": "Comfortable white t-shirt designed for everyday wear with breathable fabric."
+    "image": "assets/images/LucMatton.jpeg",
+    "description": "Men's African Kente Printed Patchwork Design Short Sleeve Button up Shirt Traditional Dashiki"
   }
 ]

@@ -1,26 +1,12 @@
 <?php
 header("Content-Type: application/json");
-
-// ================= LOAD DATABASE =================
 require_once "../config/database.php";
 
-// ================= READ JSON INPUT =================
+// ================= READ INPUT =================
 $data = json_decode(file_get_contents("php://input"), true);
 
-// ================= VALIDATION =================
-if (!$data) {
-    echo json_encode([
-        "success" => false,
-        "message" => "No data received"
-    ]);
-    exit;
-}
-
-if (empty($data["cart"])) {
-    echo json_encode([
-        "success" => false,
-        "message" => "Cart is empty"
-    ]);
+if (!$data || empty($data["cart"])) {
+    echo json_encode(["success" => false, "message" => "Invalid data"]);
     exit;
 }
 
@@ -29,36 +15,39 @@ $fullName = $conn->real_escape_string($data["name"]);
 $email    = $conn->real_escape_string($data["email"]);
 $phone    = $conn->real_escape_string($data["phone"]);
 $address  = $conn->real_escape_string($data["address"]);
-
 $paymentMethod = $conn->real_escape_string($data["paymentMethod"]);
 
-// ================= CALCULATE TOTAL =================
-$totalAmount = 0;
-foreach ($data["cart"] as $item) {
-    $price = floatval($item["price"]);
-    $qty   = intval($item["quantity"]);
-    $totalAmount += $price * $qty;
+// ================= PAYMENT DETAILS =================
+$paymentStatus = "PENDING";
+$paymentReference = null;
+
+if ($paymentMethod === "Paystack") {
+    $paymentStatus = "PAID";
+    $paymentReference = $conn->real_escape_string($data["paymentReference"]);
+} else {
+    $paymentStatus = "PAY ON DELIVERY";
 }
 
-// ================= PAYMENT STATUS =================
-$paymentStatus = ($paymentMethod === "Paystack")
-    ? "Pending"
-    : "Pay on Delivery";
+// ================= CALCULATE TOTAL (SECURE) =================
+$totalAmount = 0;
+foreach ($data["cart"] as $item) {
+    $totalAmount += floatval($item["price"]) * intval($item["quantity"]);
+}
 
 // ================= PREPARE CART JSON =================
 $cartItems = json_encode($data["cart"]);
 
 // ================= INSERT ORDER =================
-$sql = "INSERT INTO orders 
+$sql = "INSERT INTO orders
 (
   full_name, email, phone, address, cart_items,
-  total_amount, payment_method, payment_status
+  total_amount, payment_method, payment_reference, payment_status
 )
-VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 $stmt = $conn->prepare($sql);
 $stmt->bind_param(
-    "sssssdss",
+    "sssssdsss",
     $fullName,
     $email,
     $phone,
@@ -66,20 +55,14 @@ $stmt->bind_param(
     $cartItems,
     $totalAmount,
     $paymentMethod,
+    $paymentReference,
     $paymentStatus
 );
 
-// ================= EXECUTE =================
 if ($stmt->execute()) {
-    echo json_encode([
-        "success" => true,
-        "message" => "Order saved successfully"
-    ]);
+    echo json_encode(["success" => true]);
 } else {
-    echo json_encode([
-        "success" => false,
-        "message" => "Database error"
-    ]);
+    echo json_encode(["success" => false]);
 }
 
 $stmt->close();

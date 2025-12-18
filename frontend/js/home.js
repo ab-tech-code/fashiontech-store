@@ -1,9 +1,10 @@
 fetch("data/products.json")
   .then(res => res.json())
   .then(products => {
-    const list = document.getElementById("productList");
+    const container = document.getElementById("homeProductList");
 
-    products.forEach(product => {
+    // Show only first 4 as featured
+    products.slice(0, 4).forEach(product => {
       const card = document.createElement("div");
       card.className = "product-card";
 
@@ -25,7 +26,7 @@ fetch("data/products.json")
         showToast("Item added to cart");
       };
 
-      list.appendChild(card);
+      container.appendChild(card);
     });
   });
 

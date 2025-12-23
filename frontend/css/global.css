@@ -47,6 +47,10 @@ body {
   font-weight: 500;
 }
 
+.active {
+  border-bottom: 2px solid  #00f5ff;
+}
+
 /* Cart always visible */
 .cart-link {
   font-size: 25px;

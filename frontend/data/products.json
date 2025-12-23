@@ -1,23 +1,110 @@
 [
   {
     "id": 1,
-    "name": "Classic Hoodie",
+    "name": "Mid Blue Shirt",
+    "price": 80000,
+    "image": "assets/images/products/Mid_Blue_shirt.webp",
+    "description": "FitRepresent Blue Check Flannel Shirt Oversized Distressed Fit Flannel Check Shirt,11984 - Mid Blue"
+  },
+  { "id": 2,
+    "name": "Short-Sleeve Shirt",
+    "price": 65000,
+    "image": "assets/images/products/Short-Sleeve_Shirt.webp",
+    "description": "1017 ALYX 9SM 'Zip-Up' Short-Sleeve Shirt, 11990- Black"
+  },
+  { "id": 3,
+    "name": "Vintage Shirt",
+    "price": 40000,
+    "image": "assets/images/products/Vintage_Shirt.webp",
+    "description": "Yekd Silk Vintage Shirt -  Eastern Print Button-upYekd Silk Vintage Shirt -  Eastern Print Button-up Yekd Silk Vintage Shirt, 11059- Orange-Gold"
+  },
+  { "id": 4,
+    "name": "Short_Sleever",
+    "price": 68000,
+    "image": "assets/images/products/Short_Sleever.webp",
+    "description": "Acne Studios Unisex Faded Denim Short Sleeve ShirtAcne Studios Unisex Faded Denim Short Sleeve Shirt Acne Studios Unisex Short Sleeve Faded Denim Shirt, 11827- Light Blue Wash"
+  },
+    {
+    "id": 5,
+    "name": "GLACIER JACKET",
+    "price": 74000,
+    "image": "assets/images/products/jacket2.webp",
+    "description": "Outer fabric material: 100%25 polyester"
+  },
+  {
+    "id": 6,
+    "name": "Jacket black",
+    "price": 120000,
+    "image": "assets/images/products/jacket1.webp",
+    "description": "Outer fabric material 100%25 nylon"
+  },
+  {
+    "id": 7,
+    "name": "Carhartt WIP DETROIT JACKET",
+    "price": 92000,
+    "image": "assets/images/products/jacket3.webp",
+    "description": "Outer fabric material: 100%25 cotton"
+  },
+  { "id": 8,
+    "name": "HOODIE Fleece jacket",
+    "price": 125000,
+    "image": "assets/images/products/jacket4.webp",
+    "description": "Outer fabric material: 100%25 polyester"
+  },
+  {
+    "id": 9,
+    "name": "WRAP DRESS",
+    "price": 80000,
+    "image": "assets/images/products/womens_wear1.webp",
+    "description": "Outer fabric material: 100%25 polyester"
+  },
+  {
+    "id": 10,
+    "name": "Monki Shirt dress pink/light pink",
+    "price": 95000,
+    "image": "assets/images/products/womens_wear2.webp",
+    "description": "Outer fabric material: 100%25 viscose"
+  },
+  {
+    "id": 11,
+    "name": "SHORT DRESS",
+    "price": 74000,
+    "image": "assets/images/products/womens_wear3.webp",
+    "description": "Outer fabric material: 100%25 polyester"
+  },
+  {
+    "id": 12,
+    "name": "GLASSHOUSE MINI DRESS",
     "price": 12000,
-    "image": "assets/images/hoodie.jpeg",
-    "description": "REIOASUD Los Angeles Hoodie California Sweatshirt Aesthetic Clothes Girls Long Sleeve Pullover Oversized Hoodie for Women."
+    "image": "assets/images/products/womens_wear4.webp",
+    "description": "Outer fabric material: 75%25 lyocell, 25%25 polyester"
   },
   {
-    "id": 2,
-    "name": "Unknown",
-    "price": 18000,
-    "image": "assets/images/jacket.jpeg",
-    "description": "Stylish denim jacket with a modern cut, suitable for all seasons."
+    "id": 13,
+    "name": "Muslim Abayas",
+    "price": 150000,
+    "image": "assets/images/products/abaya1jpg",
+    "description": "Muslim Abayas Moroccan Floral Maxi Kaftan Dress Women Arabic Islamic Dubai Robe Ramadan Prayer Clothes"
   },
   {
-    "id": 3,
-    "name": "LucMatton",
-    "price": 8000,
-    "image": "assets/images/LucMatton.jpeg",
-    "description": "Men's African Kente Printed Patchwork Design Short Sleeve Button up Shirt Traditional Dashiki"
+    "id": 14,
+    "name": "Handmade Abaya",
+    "price": 90000,
+    "image": "assets/images/products/abaya2jpg",
+    "description": "Handmade Beaded Open Front Robe Coat, Elegant Long Sleeve Outerwear Women's Modest Cover-Up, NO INNER, Mauve Brown"
+  },
+  {
+    "id": 15,
+    "name": "Abaya Muslim Women Dress",
+    "price": 150000,
+    "image": "assets/images/products/abaya3jpg",
+    "description": "Abaya Muslim Dress Women Satin Prayer Dress Batwing Long Sleeve Middle East Arabian Robe with Hijab"
+  },
+  {
+    "id": 16,
+    "name": "Abaya One-Piece",
+    "price": 95000,
+    "image": "assets/images/products/abaya4jpg",
+    "description": "FPOVFPO Women's Muslim Abaya One-Piece V Neck Bronzing Dress Islamic Full Length Kaftan Daily Casual"
   }
 ]

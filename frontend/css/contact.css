@@ -1,0 +1,243 @@
+:root {
+  --primary: #00f5ff;
+  --dark: #0f172a;
+  --gray: #64748b;
+  --light: #f8fafc;
+}
+
+/* BASE */
+.contact-page {
+  font-family: 'Segoe UI', sans-serif;
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+/* HERO SECTION */
+.contact-hero {
+  background: url('../assets/images/AFRICA-NOW-05.webp')
+              no-repeat center center/cover;
+  padding: 140px 30px;
+  text-align: center;
+  color: var(--light);
+  position: relative;
+}
+
+.contact-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.7);
+}
+
+.contact-hero-content {
+  position: relative;
+  max-width: 700px;
+  margin: auto;
+}
+
+.contact-hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+
+.contact-hero p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* CONTACT SECTION */
+.contact-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding: 80px 30px;
+}
+
+.contact-form,
+.contact-info {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+}
+
+.contact-form h2,
+.contact-info h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: var(--dark);
+  border-left: 4px solid #00f5ff;
+  padding-left: 0.5rem;
+}
+
+/* FORM */
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--gray);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 6px rgba(0, 245, 255, 0.4);
+}
+
+.contact-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.contact-form button {
+  padding: 14px;
+  background: var(--primary);
+  color: var(--dark);
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: var(--dark);
+  color: var(--light);
+  transform: translateY(-2px);
+}
+
+/* CONTACT INFO */
+.contact-info p {
+  margin-bottom: 10px;
+  color: var(--gray);
+}
+
+.contact-info p strong::before {
+  content: "📧";
+  margin-right: 8px;
+  color: var(--primary);
+}
+
+.contact-info p:nth-child(2) strong::before {
+  content: "📞";
+}
+
+.contact-info p:nth-child(3) strong::before {
+  content: "📍";
+}
+
+.contact-socials {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+.contact-socials a {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-socials a:hover {
+  color: var(--dark);
+}
+
+/* FAQ SECTION */
+.faq-section {
+  padding: 80px 30px;
+  background: var(--light);
+}
+
+.faq-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: var(--dark);
+}
+
+.faq-item {
+  background: #fff;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+  overflow: hidden;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.faq-question .icon {
+  font-size: 1.2rem;
+  color: var(--primary);
+  transition: transform 0.3s ease;
+}
+
+.faq-answer {
+  display: none;
+  padding: 0 20px 15px;
+  color: var(--gray);
+  line-height: 1.6;
+}
+
+/* Toggle active state */
+.faq-item.active .faq-answer {
+  display: block;
+}
+
+.faq-item.active .faq-question .icon {
+  transform: rotate(45deg);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .contact-section {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .faq-section h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-hero {
+    padding: 80px 20px;
+  }
+
+  .contact-hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .contact-hero p {
+    font-size: 1rem;
+  }
+
+  .contact-form h2,
+  .contact-info h2 {
+    font-size: 1.4rem;
+  }
+}

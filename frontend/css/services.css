@@ -6,14 +6,14 @@
 }
 
 /* BASE */
-.about-page {
+.services-page {
   font-family: 'Segoe UI', sans-serif;
   color: var(--dark);
   line-height: 1.6;
 }
 
 /* HERO SECTION */
-.about-hero {
+.services-hero {
   background: url('../assets/images/AFRICA-NOW-05.webp')
               no-repeat center center/cover;
   padding: 140px 30px;
@@ -22,110 +22,83 @@
   position: relative;
 }
 
-.about-hero::before {
+.services-hero::before {
   content: "";
   position: absolute;
   inset: 0;
   background: rgba(15, 23, 42, 0.7);
 }
 
-.about-hero-content {
+.services-hero-content {
   position: relative;
   max-width: 800px;
   margin: auto;
 }
 
-.about-hero h1 {
+.services-hero h1 {
   font-size: 3rem;
   font-weight: 700;
   color: var(--primary);
   margin-bottom: 20px;
 }
 
-.about-hero p {
+.services-hero p {
   font-size: 1.2rem;
   line-height: 1.6;
 }
 
-/* STORY SECTION */
-.about-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: center;
+/* SERVICES SECTION */
+.services-section {
   padding: 80px 30px;
-}
-
-.about-text h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: var(--dark);
-}
-
-.about-text p {
-  margin-bottom: 15px;
-  color: var(--gray);
-  line-height: 1.6;
-}
-
-.about-image img {
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.15);
-}
-
-/* VALUES SECTION */
-.values-section {
-  padding: 80px 30px;
-  background: var(--light);
   text-align: center;
+  background: var(--light);
 }
 
-.values-section h2 {
+.services-section h2 {
   font-size: 2.2rem;
   margin-bottom: 40px;
   color: var(--dark);
 }
 
-.values-grid {
+.services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 25px;
 }
 
-.value-card {
+.service-card {
   background: #fff;
-  padding: 25px;
+  padding: 30px 20px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.value-card:hover {
+.service-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 18px rgba(15, 23, 42, 0.12);
 }
 
-.value-card .icon {
-  font-size: 2rem;
-  margin-bottom: 10px;
+.service-card .icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
   color: var(--primary);
 }
 
-.value-card h3 {
+.service-card h3 {
   font-size: 1.3rem;
   margin-bottom: 10px;
   color: var(--dark);
 }
 
-.value-card p {
+.service-card p {
   font-size: 1rem;
   color: var(--gray);
   line-height: 1.6;
 }
 
 /* CTA SECTION */
-.about-cta {
+.services-cta {
   background: url('../assets/images/clothing-store.jpg')
               no-repeat center center/cover;
   padding: 100px 30px;
@@ -134,7 +107,7 @@
   color: var(--light);
 }
 
-.about-cta::before {
+.services-cta::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -147,14 +120,14 @@
   margin: auto;
 }
 
-.about-cta h2 {
+.services-cta h2 {
   font-size: 2.4rem;
   font-weight: 700;
   color: var(--primary);
   margin-bottom: 20px;
 }
 
-.about-cta p {
+.services-cta p {
   font-size: 1.2rem;
   margin-bottom: 30px;
   line-height: 1.6;
@@ -180,36 +153,54 @@
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
-  .about-section {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .about-hero h1 {
+  .services-hero h1 {
     font-size: 2.2rem;
   }
 
-  .about-cta h2 {
+  .services-hero p {
+    font-size: 1rem;
+  }
+
+  .services-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .services-cta h2 {
     font-size: 2rem;
   }
 }
 
 @media (max-width: 480px) {
-  .about-hero {
-    padding: 80px 20px;
+  .services-hero {
+    padding: 100px 20px;
   }
 
-  .about-hero h1 {
+  .services-hero h1 {
     font-size: 1.8rem;
   }
 
-  .about-hero p,
-  .about-cta p {
+  .services-cta {
+    padding: 80px 20px;
+  }
+
+  .services-cta h2 {
+    font-size: 1.8rem;
+  }
+
+  .services-cta p {
     font-size: 1rem;
   }
 
   .cta-btn {
     font-size: 1rem;
     padding: 12px 20px;
+  }
+
+  .service-card {
+    padding: 25px 15px;
+  }
+
+  .service-card .icon {
+    font-size: 2rem;
   }
 }

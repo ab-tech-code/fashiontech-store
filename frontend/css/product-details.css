@@ -1,16 +1,32 @@
+:root {
+  --primary: #00f5ff;
+  --dark: #0f172a;
+  --gray: #64748b;
+  --light: #f8fafc;
+}
+
+/* CONTAINER */
 .details-container {
   padding: 110px 30px 60px;
   max-width: 1100px;
   margin: auto;
 }
 
+/* CARD */
 .details-card {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
-  background: white;
+  background: #fff;
   border-radius: 14px;
   padding: 30px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.details-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.12);
 }
 
 /* IMAGE */
@@ -19,34 +35,66 @@
   height: auto;
   object-fit: cover;
   border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.1);
 }
 
 /* INFO */
 .details-info h2 {
   margin-bottom: 15px;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--dark);
 }
 
 .details-info p {
   margin-bottom: 20px;
-  color: #374151;
+  color: var(--gray);
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 .details-info .price {
-  font-size: 22px;
-  font-weight: bold;
+  font-size: 1.6rem;
+  font-weight: 700;
   margin-bottom: 25px;
+  color: var(--dark);
 }
 
+/* BUTTON */
 .details-info button {
   padding: 14px 26px;
   background: var(--primary);
   border: none;
   cursor: pointer;
   font-size: 16px;
+  font-weight: 600;
   border-radius: 8px;
+  color: var(--dark);
+  transition: all 0.3s ease;
+}
+
+.details-info button:hover {
+  background: var(--dark);
+  color: var(--light);
+  transform: translateY(-2px);
 }
 
 /* RESPONSIVE */
+@media (max-width: 1024px) {
+  .details-card {
+    gap: 25px;
+    padding: 25px;
+  }
+
+  .details-info h2 {
+    font-size: 1.8rem;
+  }
+
+  .details-info .price {
+    font-size: 1.4rem;
+  }
+}
+
 @media (max-width: 768px) {
   .details-card {
     grid-template-columns: 1fr;
@@ -54,5 +102,46 @@
 
   .details-card img {
     height: 320px;
+  }
+
+  .details-info h2 {
+    text-align: center;
+  }
+
+  .details-info p,
+  .details-info .price,
+  .details-info button {
+    text-align: center;
+  }
+
+  .details-info button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .details-container {
+    padding: 80px 20px 40px;
+  }
+
+  .details-card {
+    padding: 20px;
+  }
+
+  .details-info h2 {
+    font-size: 1.6rem;
+  }
+
+  .details-info p {
+    font-size: 0.95rem;
+  }
+
+  .details-info .price {
+    font-size: 1.2rem;
+  }
+
+  .details-info button {
+    font-size: 0.95rem;
+    padding: 12px 20px;
   }
 }

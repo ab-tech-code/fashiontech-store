@@ -5,7 +5,7 @@ const form = document.getElementById("checkoutForm");
 
 let total = 0;
 
-/* ================= LOAD ORDER SUMMARY ================= */
+/* LOAD ORDER SUMMARY */
 if (cart.length === 0) {
   showToast("Your cart is empty");
 }
@@ -24,7 +24,7 @@ cart.forEach(item => {
 
 summaryTotal.textContent = total;
 
-/* ================= FORM SUBMIT ================= */
+/* FORM SUBMIT */
 form.addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -58,7 +58,7 @@ form.addEventListener("submit", function (e) {
   }
 });
 
-/* ================= PAYSTACK ================= */
+/* PAYSTACK*/
 function payWithPaystack(name, email, phone, address) {
   showToast("Opening payment gateway...");
 
@@ -80,7 +80,7 @@ function payWithPaystack(name, email, phone, address) {
   handler.openIframe();
 }
 
-/* ================= SAVE ORDER ================= */
+/* SAVE ORDER */
 function saveOrder(name, email, phone, address, method, reference) {
   showToast("Placing your order...");
 

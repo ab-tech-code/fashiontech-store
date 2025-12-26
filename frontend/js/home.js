@@ -3,8 +3,8 @@ fetch("data/products.json")
   .then(products => {
     const container = document.getElementById("homeProductList");
 
-    // Show only first 4 as featured
-    products.slice(0, 4).forEach(product => {
+    // Show only last 8 as featured
+    products.slice(8, 16).forEach(product => {
       const card = document.createElement("div");
       card.className = "product-card";
 

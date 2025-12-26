@@ -51,7 +51,7 @@ function renderCart() {
 
       <div>₦${item.price * item.quantity}</div>
 
-      <button class="remove-btn">✕</button>
+      <button class="remove-btn">Remove</button>
     `;
 
     div.querySelector(".plus").onclick = () => {

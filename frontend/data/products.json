@@ -81,30 +81,30 @@
   },
   {
     "id": 13,
-    "name": "Muslim Abayas",
+    "name": "Overlay Abaya",
     "price": 150000,
-    "image": "assets/images/products/abaya1jpg",
+    "image": "assets/images/products/abaya1.jpeg",
     "description": "Muslim Abayas Moroccan Floral Maxi Kaftan Dress Women Arabic Islamic Dubai Robe Ramadan Prayer Clothes"
   },
   {
     "id": 14,
     "name": "Handmade Abaya",
     "price": 90000,
-    "image": "assets/images/products/abaya2jpg",
+    "image": "assets/images/products/abaya2.jpeg",
     "description": "Handmade Beaded Open Front Robe Coat, Elegant Long Sleeve Outerwear Women's Modest Cover-Up, NO INNER, Mauve Brown"
   },
   {
     "id": 15,
     "name": "Abaya Muslim Women Dress",
     "price": 150000,
-    "image": "assets/images/products/abaya3jpg",
+    "image": "assets/images/products/abaya3.jpeg",
     "description": "Abaya Muslim Dress Women Satin Prayer Dress Batwing Long Sleeve Middle East Arabian Robe with Hijab"
   },
   {
     "id": 16,
     "name": "Abaya One-Piece",
     "price": 95000,
-    "image": "assets/images/products/abaya4jpg",
+    "image": "assets/images/products/abaya4.jpeg",
     "description": "FPOVFPO Women's Muslim Abaya One-Piece V Neck Bronzing Dress Islamic Full Length Kaftan Daily Casual"
   }
 ]

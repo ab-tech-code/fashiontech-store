@@ -3,7 +3,7 @@ const mobileMenu = document.getElementById("mobileMenu");
 const closeBtn = document.getElementById("closeMenu");
 const cartCountEl = document.getElementById("cartCount");
 
-/* ================= MOBILE MENU ================= */
+/* MOBILE MENU */
 if (hamburger) {
   hamburger.onclick = () => mobileMenu.classList.add("active");
 }
@@ -12,7 +12,7 @@ if (closeBtn) {
   closeBtn.onclick = () => mobileMenu.classList.remove("active");
 }
 
-/* ================= CART COUNT ================= */
+/* CART COUNT */
 function getCart() {
   return JSON.parse(localStorage.getItem("cart")) || [];
 }
@@ -30,3 +30,12 @@ updateCartCount();
 
 /* Make function global */
 window.updateCartCount = updateCartCount;
+
+
+// FAQ toggle
+document.addEventListener("click", function (e) {
+  if (e.target.closest(".faq-question")) {
+    const item = e.target.closest(".faq-item");
+    item.classList.toggle("active");
+  }
+});
